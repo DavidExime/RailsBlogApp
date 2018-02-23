@@ -18,10 +18,11 @@ class UsersController < ApplicationController
     end
   end
 
-  end
+  
 
   def show
     @user = User.find_by_id(params[:id])
+   
   end
 
   def edit
@@ -42,7 +43,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find_by_id(params[:id])
     @user.destroy
-    redirect '/'
+    redirect_to '/'
   end
 
 
@@ -51,5 +52,6 @@ class UsersController < ApplicationController
     params.require(:user).permit(:fname, :lname, :username, :password)
   end
 
+end
 
 

@@ -1,0 +1,9 @@
+<h2>Edit form for Blog</h2>
+
+
+<%= form_for @blog do |f| %>
+
+<%= f.text_field :title %>
+<%= f.text_area :content %>
+<%= f.submit %>
+<% end %>

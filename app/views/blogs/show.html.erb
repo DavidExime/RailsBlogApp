@@ -1,0 +1,7 @@
+<h2>Show individual blog-post</h2>
+
+ 
+<a href="/blogs/#{:id}"><%= @blog.title %></a>
+<hr>
+
+<%= link_to 'Delete', blog_path, method: :delete %>
