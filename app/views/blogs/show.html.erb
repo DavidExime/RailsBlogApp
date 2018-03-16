@@ -1,7 +1,43 @@
-<h2>Show individual blog-post</h2>
+<div class='MyBlog'><h2>My blog post</h2>
 
  
 <a href="/blogs/#{:id}"><%= @blog.title %></a>
 <hr>
 
 <%= link_to 'Delete', blog_path, method: :delete %>
+<a href="/blogs/<%= @blog.id %>"><%= @blog.title %></a>
+<hr>
+
+<div class='content'><%= @blog.content %>
+
+<a href="/blogs/<%= @blog.id %>/edit">Edit Blog</a>
+</div>
+
+<%= link_to 'Delete', blog_path, method: :delete %>
+
+
+<hr>
+</div>
+
+<div class='commentbody'<>
+ <%= form_with(model: @comment, local: true) do |c| %>
+<div>
+    <div><%= c.text_area :body%></div>
+    <div><%= c.text_area :message%></div>
+    <div><%= c.hidden_field :blog_id, :value => @blog.id %></div>
+    <div><%= c.submit %></div>
+    <% end %>
+</div>
+</div>
+
+<div class='blogcomments'<>
+<br>
+<% if @blog.comments != nil %>
+	<% @blog.comments.each do |c| %>
+<div>
+    <div><a href="<%= "/comments/#{c.id}/edit" %>"><%= c.message %></a></div>
+    <div><%= link_to 'Delete', "/comments/#{c.id}", method: :delete %></div>
+</div>
+</div>
+<% end %>
+<% end %>    

@@ -1,13 +1,14 @@
-<h1>Edit Profile</h1>
+<div class='editprofile'><h1>Edit Profile</h1>
 
 
 <%= form_for @user do |f| %>
 
-first_name:<%= f.text_field :fname %><br>
-last_name:<%= f.text_field :lname %><br>
-username:<%= f.text_field :username %><br>
+First Name:<%= f.text_field :fname %><br>
+Last Name:<%= f.text_field :lname %><br>
+Username:<%= f.text_field :username %><br>
 Password:<%= f.text_field :password %><br>
 <%= f.submit %>
 <% end %>
 
 <%= link_to 'Delete', user_path, method: :delete %>
+</div>

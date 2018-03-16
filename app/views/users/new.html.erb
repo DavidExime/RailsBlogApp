@@ -1,13 +1,15 @@
-<h1>Create an Account</h1>
+<div class='createaccount'><h1>Sign Up it will always be free!</h1>
 
 
 <%= form_for @user do |f| %>
 
-first_name:<%= f.text_field :fname %><br>
-last_name:<%= f.text_field :lname %><br>
-username:<%= f.text_field :username %><br>
+Firstname:<%= f.text_field :fname %><br>
+Lastname:<%= f.text_field :lname %><br>
+Username:<%= f.text_field :username %><br>
 Password:<%= f.text_field :password %><br>
 <%= f.submit %>
 <% end %>
 
 <%= @something %>
+
+</div>

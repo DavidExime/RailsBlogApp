@@ -1,4 +1,4 @@
-class BlogsController < ApplicationController
+	class BlogsController < ApplicationController
 	def index
 		@blogs = Blog.all
 	end
@@ -22,6 +22,7 @@ class BlogsController < ApplicationController
 
 	def show
 		@blog = Blog.find_by_id(params[:id])
+		# @comment = Comment.new 
 	end
 
 	def edit
@@ -34,8 +35,8 @@ class BlogsController < ApplicationController
 			flash[:message] = 'Your blog was updated successfully'
 			redirect_to "/blogs/#{@blog.id}"
 		else
-			flash[:message] = 'try again'
-			render "/blogs/#{@blog.id}/edit"
+			flash[:message] = 'try again' 
+			redirect_to "/blogs/#{@blog.id}/edit"
 		end
 	end
 
@@ -50,6 +51,10 @@ private
 def blog_params
 	params.require(:blog).permit(:title, :content)
 end
+def user_params
+    params.require(:user).permit(:fname, :lname, :username, :password)
+  end
+
 
 end
 

@@ -9,6 +9,23 @@
   </head>
 
   <body>
+    <nav class='navbar'>
+     <% if logged_in? %>
+         <li><%= link_to 'Log out', '/logout', {method: 'post'} %></li>
+         <li><a href='/blogs/new'>New Blog</a></li>
+         <li><a href="/users/<%= current_user.id %>/edit">Edit Profile</a></li>
+         <li><a href="/users/<%= current_user.id %>">My Profile</a></li>
+      <% end %>
+     
+     <% if !logged_in? %>
+      <li><a href='/login'>Login</a></li>
+      <% end %>
+     
+     <li><a href='/'>Home</a></li>
+     <li><a href='/users/new'>New User</a></li>
+     <li><a href='/blogs'>Blogs</a></li>
+   </nav>
+
     <%= yield %>
   </body>
 </html>

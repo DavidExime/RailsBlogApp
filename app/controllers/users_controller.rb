@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       flash[:message] = 'user created ok'
       redirect_to '/users'
     else
-      flash[:message] = 'try again dummy!'
+      flash[:message] = 'Please try again!'
       redirect_to users_new_path
     end
   end
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     if @user.update(user_params)
       flash[:message] = 'Your account has been updated Successfully'
-      redirect_to "/user/#{@user.id}"
+      redirect_to "/users"
     else
       flash[:message] = 'try again'
       render "/users/#{@user.id}/edit"

@@ -9,7 +9,7 @@ def new
 			flash[:message] = 'you logged in successfully'
 			redirect_to '/'
 		else 
-			flash[:message] = 'try again'
+			flash[:message] = 'Please try again'
 			redirect_to '/login'
 		end
 	end

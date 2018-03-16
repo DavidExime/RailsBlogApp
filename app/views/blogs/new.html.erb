@@ -1,9 +1,10 @@
-<h3>Create a new form for Blogs</h3>
+<div class='newpost'><h3>Create New Blog Post</h3>
 
 
 <%= form_for @blog do |f| %>
 <%= f.text_field :title %>
 <%= f.text_area :content %>
-<%= f.submit %>
+<%= f.submit "Publish", class: "btn btn-primary" %>
 <% end %>
+</div>
  
